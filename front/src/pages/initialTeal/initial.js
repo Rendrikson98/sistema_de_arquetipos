@@ -5,8 +5,16 @@ import './styles.css';
 
 export default function initial(){
     return(
-        <Link to='/exam'>
-            <Button className='primary'>Exame</Button>
-        </Link>
+        <div>
+            <Link to='/exam'>
+                <Button className='primary'>Exame</Button>
+            </Link>
+            <Link to='/breath'>
+                <Button className='primary'>Respiração</Button>
+            </Link>
+            <Link to='/family'>
+                <Button className='primary'>Histórico familiar</Button>
+            </Link>
+        </div>
     )
 }

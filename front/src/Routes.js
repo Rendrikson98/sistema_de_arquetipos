@@ -3,6 +3,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Initial from './pages/initialTeal/initial';
 import Exam from './pages/exam/exam';
+import Breath from './pages/breath/breath';
+import Family from './pages/family/family';
 
 
 export default function Routes(){
@@ -11,6 +13,8 @@ export default function Routes(){
             <Switch>
                 <Route path='/' exact component={Initial}/>
                 <Route path='/exam' component={Exam}/>
+                <Route path='/breath' component={Breath}/>
+                <Route path='/family' component={Family}/>
             </Switch>
         </BrowserRouter>
     )
