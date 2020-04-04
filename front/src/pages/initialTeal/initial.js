@@ -15,6 +15,9 @@ export default function initial(){
             <Link to='/family'>
                 <Button className='primary'>Histórico familiar</Button>
             </Link>
+            <Link to='/bloodPressure'>
+                <Button className='primary'>Pressão sanguínea</Button>
+            </Link>
         </div>
     )
 }
