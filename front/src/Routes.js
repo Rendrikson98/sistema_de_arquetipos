@@ -6,6 +6,7 @@ import Initial from './pages/initialTeal/initial';
 import Exam from './pages/exam/exam';
 import Breath from './pages/breath/breath';
 import Family from './pages/family/family';
+import Admission from './pages/admission/admission';
 
 
 export default function Routes(){
@@ -17,6 +18,7 @@ export default function Routes(){
                 <Route path='/exam' component={Exam}/>
                 <Route path='/breath' component={Breath}/>
                 <Route path='/family' component={Family}/>
+                <Route path='/admission' component={Admission}/>
             </Switch>
         </BrowserRouter>
     )

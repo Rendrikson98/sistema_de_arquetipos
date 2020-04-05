@@ -18,6 +18,9 @@ export default function initial(){
             <Link to='/bloodPressure'>
                 <Button className='primary'>Pressão sanguínea</Button>
             </Link>
+            <Link to='/admission'>
+                <Button className='primary'>Admissão</Button>
+            </Link>
         </div>
     )
 }
