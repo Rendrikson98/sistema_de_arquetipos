@@ -56,7 +56,7 @@ export default function Breath(){
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Respirações</h5>
-                            <form role="form" onSubmit={handleBreath}>
+                            <form onSubmit={handleBreath}>
                                 <div className="form-row">
                                     <div className="form-group col-md-4">
                                         <label>History</label>

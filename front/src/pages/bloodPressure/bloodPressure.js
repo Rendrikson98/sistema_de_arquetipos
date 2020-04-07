@@ -76,7 +76,7 @@ export default function BloodPressure(){
                       </div>
 
                       <div className="form-group col-md-12"></div>
-                      <div className="form-group col-md-3" className='estilo'>
+                      <div className="form-group col-md-3 estilo">
                           <label>Sistólica *</label>
                           <input 
                             className="form-control" 
@@ -85,7 +85,7 @@ export default function BloodPressure(){
                             onChange={e=>setsystotic(e.target.value)}  
                           />
                       </div>
-                      <div className="form-group col-md-3" className='estilo'>
+                      <div className="form-group col-md-3 estilo">
                         <label>Diastólica *</label>
                         <input 
                           className="form-control"
@@ -94,7 +94,7 @@ export default function BloodPressure(){
                           onChange={e=>setdiastotic(e.target.value)}  
                         />
                     </div>
-                    <div className="form-group col-md-3" className='estilo'>
+                    <div className="form-group col-md-3 estilo">
                         <label>Pressão Arterial Média </label>
                         <input 
                           className="form-control"
@@ -103,7 +103,7 @@ export default function BloodPressure(){
                           onChange={e=>setbloodPressure(e.target.value)} 
                         />
                     </div>
-                    <div className="form-group col-md-3" className='estilo'>
+                    <div className="form-group col-md-3 estilo">
                         <label>Pressão de Pulso *</label>
                         <input 
                           className="form-control"

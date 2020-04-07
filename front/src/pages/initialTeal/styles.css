@@ -1,0 +1,46 @@
+#titulo{
+    color: #f5f5f5;
+}
+
+.p{
+    color: #808080;
+    text-align: justify;
+}
+
+h5{
+    color: #4F4F4F;
+}
+
+Button{
+    margin-top: 10%;
+}
+
+.card-body{
+    min-height: 250px;
+    min-width: 200px;
+}
+
+#image{
+    background-image: url(../../assets/med_03.jpg);
+}
+
+h2{
+    color: #f5f5f5;
+}
+
+span{
+    margin-top: -6px;
+}
+
+#cards{
+    margin-top: 80px;
+}
+
+footer{
+    background-color: #adc4db;
+}
+
+#tituloFooter{
+    color: white;
+}
+

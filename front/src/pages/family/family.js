@@ -55,7 +55,7 @@ export default function Family(){
                 <div className="card">
                     <div className="card-body">
                     <h5 className="card-title">Histórico familiar</h5>
-                    <form role="form" onSubmit={handleFamily}>
+                    <form onSubmit={handleFamily}>
                         <div className="form-row">
                             <div className="form-group col-md-4">
                                 <label>Relationship(en)</label>
