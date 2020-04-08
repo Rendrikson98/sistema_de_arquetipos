@@ -1,30 +1,74 @@
 import React from 'react';
-import {Button, Card, Container, Row, Col} from 'react-bootstrap';
-import {Link} from 'react-router-dom'
+import {Button, Card, Container, Row, Col, Navbar, NavDropdown,Form, FormControl} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+import { makeStyles } from '@material-ui/core/styles';
+
 import './styles.css';
 
+function Copyright() {
+    return (
+      <Typography variant="body2" color="textSecondary" align="center">
+        {'Copyright © '}
+        <Link color="inherit" href="https://material-ui.com/">
+          Your Website
+        </Link>{' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
+  
+  const useStyles = makeStyles((theme) => ({
+    icon: {
+      marginRight: theme.spacing(2),
+    },
+    heroContent: {
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(8, 0, 6),
+    },
+    heroButtons: {
+      marginTop: theme.spacing(4),
+    },
+    cardGrid: {
+      paddingTop: theme.spacing(8),
+      paddingBottom: theme.spacing(8),
+    },
+    card: {
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+    },
+    cardMedia: {
+      paddingTop: '56.25%', // 16:9
+    },
+    cardContent: {
+      flexGrow: 1,
+    },
+    footer: {
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing(6),
+    },
+  }));
+  
+  const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 export default function initial(){
-    //https://react-bootstrap.github.io/components/navbar/  falta ajeitar o navbar
+    //https://material-ui.com/pt/api/app-bar/  https://material-ui.com/pt/getting-started/templates/
     return(
         <div>
+
+            <AppBar position="relative" color='default'>
+                <Toolbar>
+                <Typography variant="h6" color="inherit" noWrap>
+                    Arquétipos Editor
+                </Typography>
+                </Toolbar>
+            </AppBar>
             <div className="main-section">
-                <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-                <Container>
-                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor</Link>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="oi oi-menu"></span> Menu
-                    </button>
-                    <div className="collapse navbar-collapse" id="ftco-nav">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item cta">
-                                <Link to="#" className="nav-link icon d-flex align-items-center">
-                                    Login
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-                </Container>
-                </nav>
+                
               
                 <section className="hero-wrap" id='image' data-stellar-background-ratio="0.5">
                 <div className="overlay"></div>
