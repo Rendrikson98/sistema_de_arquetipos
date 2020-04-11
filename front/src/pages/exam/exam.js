@@ -43,7 +43,7 @@ export default function Exam(){
                 </div>
             </nav>
             <div className="row justify-content-center">
-                <div className="col-sm-10">
+                <div className="col-sm-10"  style={{marginTop:'1%'}}>
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Resultados do exame</h5>

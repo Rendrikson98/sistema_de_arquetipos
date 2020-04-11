@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 
 import api from '../../sevices/api';
@@ -113,8 +114,14 @@ export default function Admission(){
 
   }
     return(
+      <div className='main-section'>
+            <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
+                <div className="container">
+                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Admissão</Link>
+                </div>
+            </nav>
         <div className="row justify-content-center">
-            <div className="col-sm-10">
+            <div className="col-sm-10" style={{marginTop:'1%'}}>
               <div className="card">
                 <div className="card-body">
                   <h5 className="card-title">Admissão do Paciente</h5>
@@ -605,6 +612,7 @@ export default function Admission(){
                 </div>
               </div>
             </div>
+        </div>
         </div>
     )
 }
