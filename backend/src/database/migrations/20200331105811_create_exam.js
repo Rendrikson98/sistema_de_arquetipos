@@ -1,7 +1,7 @@
 
 exports.up = function(knex) {
   return knex.schema.createTable('exam', function(table){
-      table.string('id').primary()
+      table.increments('id');
       table.string('systeOrEstru').notNullable();
       table.string('bodyLocation').notNullable();
       table.string('noAbnormality').notNullable();

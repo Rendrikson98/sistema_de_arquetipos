@@ -27,6 +27,7 @@ export default function BloodPressure(){
   const [diastoliPressure, setdiastoliPressure] = useState('');
 
   async function handleBloodPressure(e){
+    
     e.preventDefault();
 
     const data = {
@@ -54,6 +55,26 @@ export default function BloodPressure(){
       const response = await api.post('bloodPressure', data);
 
       alert(`Dados enviados com sucesso a Id desse formulário é:${response.data.id}`)
+
+      document.getElementById('1').value='';
+      document.getElementById('2').value='';
+      document.getElementById('3').value='';
+      document.getElementById('4').value='';
+      document.getElementById('5').value='';
+      document.getElementById('6').value='';
+      document.getElementById('7').value='';
+      document.getElementById('8').value='';
+      document.getElementById('9').value='';
+      document.getElementById('10').value='';
+      document.getElementById('11').value='';
+      document.getElementById('12').value='';
+      document.getElementById('13').value='';
+      document.getElementById('15').value='';
+      document.getElementById('16').value='';
+      document.getElementById('17').value='';
+      document.getElementById('18').value='';
+      document.getElementById('19').value='';
+
     }catch(error){
       alert("Erro ao enviar os dados, tente novamente");
     }
@@ -63,7 +84,7 @@ export default function BloodPressure(){
       <div className='main-section'>
             <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
                 <div className="container">
-                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Breath</Link>
+                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Pressão Arterial</Link>
                 </div>
             </nav>
         <div className="row justify-content-center">
@@ -75,7 +96,7 @@ export default function BloodPressure(){
                 <div className="form-row">
                     <div className="form-group col-md-4">
                         <label>History</label>
-                        <select className="form-control" value={historic} onChange={e=>sethistoric(e.target.value)}>
+                        <select id='1' className="form-control" value={historic} onChange={e=>sethistoric(e.target.value)}>
                           <option></option>
                           <option>Qualquer evento</option>
                           <option>Media de 24 horas</option>
@@ -86,6 +107,7 @@ export default function BloodPressure(){
                       <div className="form-group col-md-3 estilo">
                           <label>Sistólica *</label>
                           <input 
+                            id='2'
                             className="form-control" 
                             placeholder="0,00 mm[Hg]"
                             value={systotic}
@@ -95,6 +117,7 @@ export default function BloodPressure(){
                       <div className="form-group col-md-3 estilo">
                         <label>Diastólica *</label>
                         <input 
+                          id='3'
                           className="form-control"
                           placeholder="0,00 mm[Hg]"
                           value={diastotic}
@@ -104,6 +127,7 @@ export default function BloodPressure(){
                     <div className="form-group col-md-3 estilo">
                         <label>Pressão Arterial Média </label>
                         <input 
+                          id='4'
                           className="form-control"
                           placeholder="0,00 mm[Hg]"
                           value={bloodPressure} 
@@ -113,6 +137,7 @@ export default function BloodPressure(){
                     <div className="form-group col-md-3 estilo">
                         <label>Pressão de Pulso *</label>
                         <input 
+                          id='5'
                           className="form-control"
                           placeholder="0,00 mm[Hg]" 
                           value={pulsePressure}
@@ -122,6 +147,7 @@ export default function BloodPressure(){
                     <div className="form-group col-md-6">
                         <label>Interpretação Clínica</label>
                         <input
+                          id='6'
                           className="form-control" 
                           placeholder="Interpretação Clínica" 
                           value={clinicalInterpretation}  
@@ -131,6 +157,7 @@ export default function BloodPressure(){
                     <div className="form-group col-md-6">
                         <label>Comentário</label>
                         <input 
+                          id='7'
                           className="form-control" 
                           placeholder="Interpretação Clínica" 
                           value={commentary}  
@@ -144,7 +171,7 @@ export default function BloodPressure(){
                   </div>
                   <div className="form-group col-md-6">
                       <label>Posição</label>
-                      <select className="form-control" value={position} onChange={e=>setposition(e.target.value)}> 
+                      <select id='8' className="form-control" value={position} onChange={e=>setposition(e.target.value)}> 
                         <option></option>
                         <option>Em pé</option>
                         <option>Sentado</option>
@@ -155,7 +182,7 @@ export default function BloodPressure(){
                   </div>
                   <div className="form-group col-md-6">
                     <label>Status do sono</label>
-                    <select className="form-control" value={sleepStatus} onChange={e=>setsleepStatus(e.target.value)}>
+                    <select  id='9' className="form-control" value={sleepStatus} onChange={e=>setsleepStatus(e.target.value)}>
                         <option></option>
                         <option>Alerta e acordado</option>
                         <option>Dormindo</option>
@@ -164,6 +191,7 @@ export default function BloodPressure(){
                   <div className="form-group col-md-6">
                       <label>Fatores Confundidores</label>
                       <input 
+                        id='10'
                         className="form-control"
                         placeholder="Fatores..."
                         value={factors}  
@@ -173,6 +201,7 @@ export default function BloodPressure(){
                   <div className="form-group col-md-6">
                       <label>Inclinado</label>
                       <input 
+                        id='11'
                         className="form-control"
                         placeholder="0,00 deg"
                         value={tilted}
@@ -184,7 +213,7 @@ export default function BloodPressure(){
                   </div>
                   <div className="form-group col-md-6">
                       <label>Tamanho da Braçadeira</label>
-                      <select className="form-control" value={clamp} onChange={e=>setclamp(e.target.value)}>
+                      <select id='12' className="form-control" value={clamp} onChange={e=>setclamp(e.target.value)}>
                           <option></option>
                           <option>Coxa de adulto</option>
                           <option>Adulto Grande</option>
@@ -196,13 +225,13 @@ export default function BloodPressure(){
                       </select>
                   </div>
                   <div className="form-group col-md-6">
-                      <label for="measurementLocation">Localização da Medição</label>
+                      <label >Localização da Medição</label>
                       <ul className="nav nav-tabs " id="myTab" role="tablist">
                         <li className="nav-item">
                           <a className="nav-link active" id="home-tab" data-toggle="tab" href="#localM" role="tab" aria-controls="home" aria-selected="true">Local Medicação</a>
                           <div className="tab-content" id="myTabContent">
                             <div className="tab-pane fade show active" id="measurementLocation" role="tabpanel" aria-labelledby="home-tab">
-                                <select className="form-control" value={measurementLocation} onChange={e=>setmeasurementLocation(e.target.value)}>
+                                <select id='13' className="form-control" value={measurementLocation} onChange={e=>setmeasurementLocation(e.target.value)}>
                                     <option></option>
                                     <option>Braço direito</option>
                                     <option>Braço esquerdo</option>
@@ -217,7 +246,7 @@ export default function BloodPressure(){
                                 </select>
                             </div>
                             <div className="tab-pane fade " id="descrever" role="tabpanel" aria-labelledby="profile-tab">
-                                <textarea type="text" className="form-control" id="measurementLocation" placeholder="Texto..." name="measurementLocation"></textarea>
+                                <textarea  type="text" className="form-control" id="measurementLocation" placeholder="Texto..." name="measurementLocation"></textarea>
                             </div>
                           </div>
                         </li>
@@ -228,7 +257,7 @@ export default function BloodPressure(){
                   </div>
                   <div className="form-group col-md-6">
                       <label>Método</label>
-                      <select className="form-control" value={method} onChange={e=>setmethod(e.target.value)}>
+                      <select id='15' className="form-control" value={method} onChange={e=>setmethod(e.target.value)}>
                           <option></option>
                           <option>Ausculta</option>
                           <option>Palpação</option>
@@ -240,6 +269,7 @@ export default function BloodPressure(){
                   <div className="form-group col-md-6">
                     <label>Fomulário de Pressão Sistólica</label>
                     <input 
+                      id='16'
                       className="form-control" 
                       placeholder="Formulário..."
                       value={systoticForm}  
@@ -249,6 +279,7 @@ export default function BloodPressure(){
                 <div className="form-group col-md-6">
                     <label>Fomulário de Pressão Diastólica</label>
                     <input 
+                      id='17'
                       className="form-control" 
                       placeholder="Formulário..." 
                       value={finalDiastole}
@@ -258,6 +289,7 @@ export default function BloodPressure(){
                 <div className="form-group col-md-6">
                       <label >Fomulário de Pressão Arterial</label>
                       <input 
+                        id='18'
                         className="form-control" 
                         placeholder="Formulário..." 
                         value={bloodPressuerForm} 
@@ -266,7 +298,7 @@ export default function BloodPressure(){
                   </div>
                 <div className="form-group col-md-6">
                     <label>Final da Diástole</label>
-                    <select className="form-control" value={diastoliPressure} onChange={e=>setdiastoliPressure(e.target.value)}>
+                    <select id='19' className="form-control" value={diastoliPressure} onChange={e=>setdiastoliPressure(e.target.value)}>
                         <option></option>
                         <option>Fhase IV.</option>
                         <option>Phase V</option>

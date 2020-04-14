@@ -1,4 +1,3 @@
-const crypto = require('crypto');
 const connection = require('../database/connection');
 
 module.exports = {
@@ -18,10 +17,7 @@ module.exports = {
             comment 
         } = request.body; 
 
-        const id = crypto.randomBytes(4).toString('HEX');
-
-        const result = await connection('exam').insert({
-            id,
+        const [id] = await connection('exam').insert({
             systeOrEstru,
             bodyLocation,
             noAbnormality,

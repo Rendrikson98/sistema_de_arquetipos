@@ -5,6 +5,7 @@ const BreathController = require("./controllers/BreathController");
 const FamilyController = require('./controllers/FamilyController');
 const BloodPressure = require('./controllers/BloodPressure');
 const AdmissionController = require('./controllers/AdmissionController');
+const Listcontroller = require('./controllers/ListController');
 
 
 const routes = express.Router();
@@ -23,5 +24,7 @@ routes.post('/bloodPressure', BloodPressure.create);
 
 routes.get('/admission', AdmissionController.index);
 routes.post('/admission', AdmissionController.create);
+
+routes.get('/list', Listcontroller.index);
 
 module.exports = routes;

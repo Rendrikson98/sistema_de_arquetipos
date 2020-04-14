@@ -38,6 +38,17 @@ export default function Breath(){
             const response = await api.post('breath', data);
 
             alert(`Dados enviados com sucesso a Id desse formulário é: ${response.data.id}`);
+
+            document.getElementById('1').value='';
+            document.getElementById('2').value='';
+            document.getElementById('3').value='';
+            document.getElementById('4').value='';
+            document.getElementById('5').value='';
+            document.getElementById('6').value='';
+            document.getElementById('7').value='';
+            document.getElementById('8').value='';
+            document.getElementById('9').value='';
+            document.getElementById('10').value='';
         }catch(err){
             alert('Erro ao enviar os dados, tente novamente');
         }
@@ -60,7 +71,7 @@ export default function Breath(){
                                 <div className="form-row">
                                     <div className="form-group col-md-4">
                                         <label>History</label>
-                                        <select id="history" className="form-control" value={history} onChange={e=> setHistory(e.target.value)}>
+                                        <select id="1" className="form-control" value={history} onChange={e=> setHistory(e.target.value)}>
                                         <option></option>
                                         <option>Qualquer evento</option>
                                         </select>
@@ -68,7 +79,7 @@ export default function Breath(){
                                     <div className="form-group col-md-12"></div>
                                     <div className="form-group col-md-6" id='first'>
                                         <label>Presence(en)</label>
-                                        <select id="presence" className="form-control" value={presence} onChange={e=> setPresence(e.target.value)}>
+                                        <select id="2" className="form-control" value={presence} onChange={e=> setPresence(e.target.value)}>
                                             <option></option>
                                             <option>*Present (en)</option>
                                             <option>*Not detected (en)</option>
@@ -77,6 +88,7 @@ export default function Breath(){
                                     <div className="form-group col-md-6" id='second'>
                                         <label>Frequência</label>
                                         <input 
+                                            id='3'
                                             className="form-control" 
                                             placeholder="00" 
                                             value={frequency}
@@ -85,7 +97,7 @@ export default function Breath(){
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label>Regularity(en)</label>
-                                        <select id="regularity" className="form-control" value={regularity} onChange={e=> setRegularity(e.target.value)}>
+                                        <select id="4" className="form-control" value={regularity} onChange={e=> setRegularity(e.target.value)}>
                                             <option></option>
                                             <option>Regular</option>
                                             <option>Irregular</option>
@@ -93,7 +105,7 @@ export default function Breath(){
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label>Profundidade</label>
-                                        <select id="profundidade" className="form-control" value={depth} onChange={e=>setDepth(e.target.value)}>
+                                        <select id="5" className="form-control" value={depth} onChange={e=>setDepth(e.target.value)}>
                                             <option></option>
                                             <option>Normal</option>
                                             <option>Superficial</option>
@@ -104,6 +116,7 @@ export default function Breath(){
                                     <div className="form-group col-md-6">
                                         <label>Clinical Description(en)</label>
                                         <input 
+                                            id='6'
                                             className="form-control"
                                             placeholder="Clinical description"
                                             value={clinicalDescription}
@@ -113,6 +126,7 @@ export default function Breath(){
                                     <div className="form-group col-md-6">
                                         <label>Interpretação clinica</label>
                                         <input
+                                            id='7'
                                             className="form-control"
                                             placeholder="Interpretação Clínica"
                                             value={clinicalInterpretation}
@@ -122,6 +136,7 @@ export default function Breath(){
                                     <div className="form-group col-md-6">
                                         <label>Comment(en)</label>
                                         <input
+                                            id='8'
                                             className="form-control"
                                             placeholder="Comment"
                                             value={comment}
@@ -136,7 +151,7 @@ export default function Breath(){
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label>Body position</label>
-                                        <select id="bodyPosition" className="form-control" value={bodyPosition} onChange={e=>setBodyPosition(e.target.value)}>
+                                        <select id="9" className="form-control" value={bodyPosition} onChange={e=>setBodyPosition(e.target.value)}>
                                             <option></option>
                                             <option>*Standing/upright (en)</option>
                                             <option>*Sitting (en)</option>
@@ -148,6 +163,7 @@ export default function Breath(){
                                     <div className="form-group col-md-6">
                                         <label>Fatores de confusão</label>
                                         <input
+                                            id='10'
                                             className="form-control"
                                             placeholder="Fatores de confusão"
                                             value={confoundingFactors}    

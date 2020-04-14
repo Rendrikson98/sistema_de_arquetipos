@@ -15,8 +15,9 @@ export default function Exam(){
    const [comment, setComment] = useState('');
 
    async function handleExam(e){
-       e.preventDefault();
        
+        e.preventDefault();
+
        const data = {
            systeOrEstru,
            bodyLocation,
@@ -30,6 +31,14 @@ export default function Exam(){
         const response = await api.post('exam', data);
 
         alert(`Dados enviados com sucesso a Id desse formulário é: ${response.data.id}`);
+
+        document.getElementById('1').value='';
+        document.getElementById('2').value='';
+        document.getElementById('3').value='';
+        document.getElementById('4').value='';
+        document.getElementById('5').value='';
+        document.getElementById('6').value='';
+
        }catch(err){
         alert('Erro ao enviar os dados');
        }
@@ -40,6 +49,9 @@ export default function Exam(){
             <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
                 <div className="container">
                     <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Exam</Link>
+                </div>
+                <div style={{marginRight:'20px'}}>
+                    <Link to='/list'>Listar</Link>
                 </div>
             </nav>
             <div className="row justify-content-center">
@@ -52,6 +64,7 @@ export default function Exam(){
                                     <div className='form-group col-md-6'>
                                     <label >Sistema ou extrutura examinada*</label>
                                     <input 
+                                        id='1'
                                         className="form-control" 
                                         placeholder="Sisteam ou extrutura examinada" 
                                         value={systeOrEstru} 
@@ -62,6 +75,7 @@ export default function Exam(){
                                     <div className="form-group col-md-6">
                                         <label >Local do corpo*</label>
                                         <input 
+                                            id='2'
                                             className="form-control" 
                                             placeholder="Local corpo"
                                             value={bodyLocation}
@@ -72,7 +86,8 @@ export default function Exam(){
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
                                         <label >Nenhuma arnomalidade</label>
-                                        <select className="form-control" value={noAbnormality} onChange={e => setNoAbnormality(e.target.value)} >
+                                        <select id='3' className="form-control" value={noAbnormality} onChange={e => setNoAbnormality(e.target.value)} >
+                                            <option></option>
                                             <option>True</option>
                                             <option>False</option>
                                         </select>
@@ -80,6 +95,7 @@ export default function Exam(){
                                     <div className="form-group col-md-6">
                                         <label >Descrição clínica</label>
                                         <input  
+                                            id='4'
                                             className="form-control" 
                                             placeholder="Descrição Clínica" 
                                             value={clinicalDescription}
@@ -89,6 +105,7 @@ export default function Exam(){
                                     <div className="form-group col-md-6">
                                         <label >Interpretação clínica</label>
                                         <input 
+                                            id='5'
                                             className="form-control"
                                             placeholder="Interpretação Clínica"
                                             value={clinicalInterpretation} 
@@ -98,6 +115,7 @@ export default function Exam(){
                                     <div className="form-group col-md-6">
                                         <label >Comentário</label>
                                         <input 
+                                            id='6'
                                             className="form-control"  
                                             placeholder="Comentario" 
                                             value={comment}

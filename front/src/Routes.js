@@ -1,12 +1,13 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import BloodPressure from './pages/bloodPressure/bloodPressure';
-import Initial from './pages/initialTeal/initial';
-import Exam from './pages/exam/exam';
-import Breath from './pages/breath/breath';
-import Family from './pages/family/family';
-import Admission from './pages/admission/admission';
+import BloodPressure from './pages/bloodPressure';
+import Initial from './pages/initialTeal';
+import Exam from './pages/exam';
+import Breath from './pages/breath';
+import Family from './pages/family';
+import Admission from './pages/admission';
+import List from './pages/list/index';
 
 
 export default function Routes(){
@@ -19,6 +20,7 @@ export default function Routes(){
                 <Route path='/breath' component={Breath}/>
                 <Route path='/family' component={Family}/>
                 <Route path='/admission' component={Admission}/>
+                <Route path='/list' component={List}/>
             </Switch>
         </BrowserRouter>
     )

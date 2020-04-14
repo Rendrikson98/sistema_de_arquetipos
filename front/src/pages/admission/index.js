@@ -54,8 +54,8 @@ export default function Admission(){
 
   
   async function handleAdmission(e){
-    e.preventDefault();
     
+    e.preventDefault();
 
     const data = {
       classificationPatient,
@@ -108,6 +108,52 @@ export default function Admission(){
       const response = await api.post('admission', data);
 
       alert(`Dados enviados com sucesso a Id desse formulário é:${response.data.id}`);
+
+      document.getElementById('1').value='';
+      document.getElementById('2').value='';
+      document.getElementById('3').value='';
+      document.getElementById('4').value='';
+      document.getElementById('5').value='';
+      document.getElementById('6').value='';
+      document.getElementById('7').value='';
+      document.getElementById('8').value='';
+      document.getElementById('9').value='';
+      document.getElementById('10').value='';
+      document.getElementById('11').value='';
+      document.getElementById('12').value='';
+      document.getElementById('13').value='';
+      document.getElementById('14').value='';
+      document.getElementById('15').value='';
+      document.getElementById('16').value='';
+      document.getElementById('17').value='';
+      document.getElementById('18').value='';
+      document.getElementById('19').value='';
+      document.getElementById('20').value='';
+      document.getElementById('21').value='';
+      document.getElementById('22').value='';
+      document.getElementById('23').value='';
+      document.getElementById('24').value='';
+      document.getElementById('25').value='';
+      document.getElementById('26').value='';
+      document.getElementById('27').value='';
+      document.getElementById('28').value='';
+      document.getElementById('29').value='';
+      document.getElementById('30').value='';
+      document.getElementById('31').value='';
+      document.getElementById('32').value='';
+      document.getElementById('33').value='';
+      document.getElementById('34').value='';
+      document.getElementById('35').value='';
+      document.getElementById('36').value='';
+      document.getElementById('37').value='';
+      document.getElementById('38').value='';
+      document.getElementById('39').value='';
+      document.getElementById('40').value='';
+      document.getElementById('41').value='';
+      document.getElementById('42').value='';
+      document.getElementById('43').value='';
+      document.getElementById('44').value='';
+
     }catch(error){
       alert('Erro ao enviar os dados, tente novamente');
     }
@@ -129,7 +175,7 @@ export default function Admission(){
                     <div className="form-row">
                         <div className="form-group col-md-4">
                             <label>classificação do Paciente</label>
-                            <select className="form-control" value={classificationPatient} onChange={e=>setClassificationPatient(e.target.value)}>
+                            <select id='1' className="form-control" value={classificationPatient} onChange={e=>setClassificationPatient(e.target.value)}>
                               <option>Internação/ paciente com pernoite</option>
                               <option>Day hospital</option>
                               <option>Ambulatorial</option>
@@ -150,6 +196,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                           <label >Unidade de Cuidado *</label>
                           <input 
+                            id='2'
                             className="form-control" 
                             placeholder="Unidade de Cuidado" 
                             value={careUnit}
@@ -159,6 +206,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Ala *</label>
                         <input
+                          id='3'
                           className="form-control"
                           placeholder="Ala"
                           value={allah}
@@ -168,6 +216,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Quarto * </label>
                         <input 
+                          id='4'
                           className="form-control" 
                           placeholder="Quarto"
                           value={bedroom}
@@ -177,6 +226,7 @@ export default function Admission(){
                       <div className="form-group col-md-6 ">
                         <label>Leito *</label>
                         <input 
+                          id='5'
                           className="form-control"
                           placeholder="Leito"
                           value={bed}  
@@ -189,6 +239,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>ID do Local</label>
                         <input 
+                          id='6'
                           className="form-control"
                           placeholder="ID do local"
                           value={placeId}
@@ -198,6 +249,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>ID Universal</label>
                         <input 
+                          id='7'
                           className="form-control"
                           placeholder="ID Universal"
                           value={universalId} 
@@ -206,7 +258,7 @@ export default function Admission(){
                       </div>
                       <div className="form-group col-md-6">
                         <label>Tipo do ID Universal</label>
-                            <select className="form-control" value={universalIdType} onChange={e=>setUniversalIdType(e.target.value)}>
+                            <select id='8' className="form-control" value={universalIdType} onChange={e=>setUniversalIdType(e.target.value)}>
                               <option>DNS</option>
                               <option>GUID</option>
                               <option>HCD</option>
@@ -222,6 +274,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Prédio</label>
                         <input 
+                          id='9'
                           className="form-control"
                           placeholder="Prédio"
                           value={building}
@@ -231,6 +284,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Andar</label>
                         <input 
+                          id='10'
                           className="form-control"
                           placeholder="Andar"
                           value={floor}
@@ -240,6 +294,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Descrição da Localização</label>
                         <input
+                          id='11'
                           className="form-control"
                           placeholder="Descrição da Localização"
                           value={locationDescription}
@@ -253,6 +308,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Logradouro</label>
                         <input
+                          id='12'
                           className="form-control"
                           placeholder="Logradouro"
                           value={publicPlace}
@@ -262,6 +318,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Cidade</label>
                         <input 
+                          id='13'
                           className="form-control"
                           placeholder="Cidade"
                           value={city}
@@ -271,6 +328,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Estado</label>
                         <input
+                          id='14'
                           className="form-control"
                           placeholder="Estado"
                           value={state}
@@ -280,6 +338,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>País</label>
                         <input
+                          id='15'
                           className="form-control"
                           placeholder="País"
                           value={country}
@@ -288,7 +347,7 @@ export default function Admission(){
                       </div>
                       <div className="form-group col-md-6">
                         <label>Tipo de Localização</label>
-                            <select className="form-control" value={locationType} onChange={e=>setLocationType(e.target.value)}>
+                            <select id='16' className="form-control" value={locationType} onChange={e=>setLocationType(e.target.value)}>
                               <option>Clínica</option>
                               <option>Casa</option>
                               <option>Departamento</option>
@@ -298,7 +357,7 @@ export default function Admission(){
                       </div>
                       <div className="form-group col-md-6">
                         <label>Tipo de Admissão</label>
-                            <select className="form-control" value={AdmissionType} onChange={e=>setAdmissionType(e.target.value)}>
+                            <select id='17' className="form-control" value={AdmissionType} onChange={e=>setAdmissionType(e.target.value)}>
                               <option>Clínica</option>
                               <option>Acidente</option>
                               <option>Emergência</option>
@@ -314,6 +373,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Número da Pré-admissão</label>
                         <input 
+                          id='18'
                           className="form-control"
                           placeholder="Número da Pré-admissão"
                           value={preAdmissionNumber}
@@ -331,6 +391,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>ID do Local</label>
                       <input 
+                        id='19'
                         className="form-control"
                         placeholder="ID do local"
                         value={placeIdPatient}
@@ -340,6 +401,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>ID Universal</label>
                       <input
+                        id='20'
                         className="form-control"
                         placeholder="ID Universal"
                         value={universalIdPatient}
@@ -348,7 +410,7 @@ export default function Admission(){
                     </div>
                     <div className="form-group col-md-6">
                       <label>Tipo do ID Universal</label>
-                          <select className="form-control" value={universalIdTypePatient} onChange={e=>setUniversalIdTypePatient(e.target.value)}>
+                          <select id='21' className="form-control" value={universalIdTypePatient} onChange={e=>setUniversalIdTypePatient(e.target.value)}>
                             <option>DNS</option>
                             <option>GUID</option>
                             <option>HCD</option>
@@ -367,6 +429,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>Logradouro</label>
                       <input 
+                        id='22'
                         className="form-control"
                         placeholder="Logradouro"
                         value={publicPlacePatient}
@@ -376,6 +439,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>Cidade</label>
                       <input 
+                        id='23'
                         className="form-control"
                         placeholder="Cidade"
                         value={cityPatient}
@@ -385,6 +449,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>Estado</label>
                       <input 
+                        id='24'
                         className="form-control"
                         placeholder="Estado"
                         value={statePatient}
@@ -394,6 +459,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>País</label>
                       <input
+                        id='25'
                         className="form-control"
                         placeholder="País"
                         value={countryPatient}
@@ -402,7 +468,7 @@ export default function Admission(){
                     </div>
                     <div className="form-group col-md-6">
                       <label>Tipo de Localização</label>
-                          <select className="form-control" value={locationTypePatient} onChange={e=>setLocationTypePatient(e.target.value)}>
+                          <select id='26' className="form-control" value={locationTypePatient} onChange={e=>setLocationTypePatient(e.target.value)}>
                             <option>Clínica</option>
                             <option>Casa</option>
                             <option>Departamento</option>
@@ -412,7 +478,7 @@ export default function Admission(){
                     </div>
                     <div className="form-group col-md-6">
                       <label >Tipo de Admissão</label>
-                          <select className="form-control" value={admissiontypePatient} onChange={e=>setAdmissiontypePatient(e.target.value)}>
+                          <select id='27' className="form-control" value={admissiontypePatient} onChange={e=>setAdmissiontypePatient(e.target.value)}>
                             <option>Clínica</option>
                             <option>Acidente</option>
                             <option>Emergência</option>
@@ -428,6 +494,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>Número da Pré-admissão</label>
                       <input 
+                        id='28'
                         className="form-control"
                         placeholder="Número da Pré-admissão"
                         value={preAdmissionNumberPatient}  
@@ -441,6 +508,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                       <label >ID</label>
                       <input 
+                        id='29'
                         className="form-control"
                         placeholder="ID Médico"
                         value={idDoctor}
@@ -450,6 +518,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Nome</label>
                         <input 
+                          id='30'
                           className="form-control"
                           placeholder="Nome"
                           value={nameDoctor}
@@ -459,6 +528,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Sobrenome</label>
                         <input
+                          id='31'
                           className="form-control"
                           placeholder="Sobrenome"
                           value={surnameDoctor}
@@ -472,6 +542,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                       <label>ID</label>
                       <input 
+                        id='32'
                         className="form-control"
                         placeholder="ID Médico"
                         value={idRequestingDoctor}
@@ -481,6 +552,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Nome</label>
                         <input 
+                          id='33'
                           className="form-control"
                           placeholder="Nome"
                           value={nameRequestingDoctor}
@@ -490,6 +562,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label >Sobrenome</label>
                         <input 
+                          id='34'
                           className="form-control"
                           placeholder="Sobrenome"
                           value={surnameRequestingDoctor}
@@ -503,6 +576,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                         <label>ID</label>
                         <input 
+                          id='35'
                           className="form-control"
                           placeholder="ID Médico"
                           value={idDoctorEspecialist}
@@ -512,6 +586,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                           <label>Nome</label>
                           <input
+                            id='36'
                             className="form-control" 
                             placeholder="Nome"
                             value={nameDoctorEspecialist}  
@@ -521,6 +596,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                           <label>Sobrenome</label>
                           <input 
+                            id='37'
                             className="form-control"
                             placeholder="Sobrenome"
                             value={surnameDoctorEspecialist}
@@ -530,6 +606,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                           <label>Unidade Hospitalar</label>
                           <input
+                            id='38'
                             className="form-control"
                             placeholder="Unidade Hospitalar"
                             value={hospitalUnitDoctorEspecialist}
@@ -539,6 +616,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                           <label>Fonte de Admissão</label>
                           <input
+                            id='39'
                             className="form-control"
                             placeholder="Fonte de Admissão"
                             value={admissionsourceDoctorEspecialist}
@@ -552,6 +630,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                           <label>ID</label>
                           <input 
+                            id='40'
                             className="form-control"
                             placeholder="ID Médico"
                             value={idDoctorAdmission} 
@@ -561,6 +640,7 @@ export default function Admission(){
                           <div className="form-group col-md-6">
                             <label>Nome</label>
                             <input 
+                              id='41'
                               className="form-control"
                               placeholder="Nome"
                               value={nameDoctorAdmission}
@@ -570,6 +650,7 @@ export default function Admission(){
                           <div className="form-group col-md-6">
                             <label>Sobrenome</label>
                             <input
+                              id='42'
                               className="form-control"
                               placeholder="Sobrenome"
                               value={surnameDoctorAdmission}
@@ -578,7 +659,7 @@ export default function Admission(){
                           </div>
                         <div className="form-group col-md-6">
                           <label>Tipo de Financiamento</label>
-                              <select className="form-control" value={financingtypeDoctorAdmission} onChange={e=>setFinancingtypeDoctorAdmission(e.target.value)}>
+                              <select id='43' className="form-control" value={financingtypeDoctorAdmission} onChange={e=>setFinancingtypeDoctorAdmission(e.target.value)}>
                                 <option>*Australian Health Care Agreements(en)</option>
                                 <option>Seguros de saúde privados</option>
                                 <option>Auto financiado</option>
@@ -597,6 +678,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                           <label>Data/hora de Admissão</label>
                           <input 
+                            id='44'
                             type="datetime-local"
                             className="form-control"
                             name="dtAdmissao"
