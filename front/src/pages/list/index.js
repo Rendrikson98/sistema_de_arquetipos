@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import {Card} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import {Col, Row, Container} from 'react-bootstrap';
 
 
 import api from '../../sevices/api';
@@ -9,18 +9,17 @@ import './styles.css';
 export default function List(){
  const [incidents, setincidents] = useState([]);
 
-
-
  useEffect(()=>{
      api.get('exam').then(response => {
          setincidents(response.data);
      })
  })
 
+ //Ver a questão do erro no console no key
+
 
     return(
         <>
-        <div>
             <header>
                 <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
                     <div className="container">
@@ -31,37 +30,41 @@ export default function List(){
                     </div>
                 </nav>
             </header>
-        </div>
-        <div className='profile-container'>
-            <h1>Casos Exame</h1>
+            <div className='profile-container'>
+                <h1>Casos Exame</h1>
+                <Container>
+                <ul>
+                <Row>
+                    {incidents.map(incident => (
+                        <Col md={6}>
+                        <li key={incident.id}>
+                            <strong>ID</strong>
+                            <p>{incident.id}</p>
+                            
+                            <strong>Sistema</strong>
+                            <p>{incident.systeOrEstru}</p>
 
-            <ul>
-                {incidents.map(incident => (
-                    <Card>
-                    <li key={incident.id}>
-                        <strong>Sistema</strong>
-                        <p>{incident.systeOrEstru}</p>
+                            <strong>Local do corpo</strong>
+                            <p>{incident.bodyLocation}</p>
 
-                        <strong>Local do corpo</strong>
-                        <p>{incident.bodyLocation}</p>
+                            <strong>Anormalidade</strong>
+                            <p>{incident.noAbnormality}</p>
 
-                        <strong>Anormalidade</strong>
-                        <p>{incident.noAbnormality}</p>
+                            <strong>Descrição clínica</strong>
+                            <p>{incident.clinicalDescription}</p>
 
-                        <strong>Descrição clínica</strong>
-                        <p>{incident.clinicalDescription}</p>
+                            <strong>Interpretação clínica</strong>
+                            <p>{incident.clinicalInterpretation}</p>
 
-                        <strong>Interpretação clínica</strong>
-                        <p>{incident.clinicalInterpretation}</p>
-
-                        <strong>Comentários</strong>
-                        <p>{incident.comment}</p>
-
-                    </li>
-                    </Card>
-                ))}
-            </ul>
-        </div>
+                            <strong>Comentários</strong>
+                            <p>{incident.comment}</p>
+                        </li>
+                        </Col>
+                    ))}
+                </Row>
+                </ul>
+                </Container>
+            </div>
         </>
     );
 }
