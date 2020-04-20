@@ -26,5 +26,6 @@ routes.get('/admission', AdmissionController.index);
 routes.post('/admission', AdmissionController.create);
 
 routes.get('/list', Listcontroller.index);
+routes.put('/list/:id', Listcontroller.update);
 
 module.exports = routes;
