@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import {Col, Row, Container} from 'react-bootstrap';
+import {BsPencil} from 'react-icons/bs';
 
 
 import api from '../../sevices/api';
 import './styles.css';
 
 export default function List(){
+    
+
  const [incidents, setincidents] = useState([]);
 
  useEffect(()=>{
      api.get('exam').then(response => {
          setincidents(response.data);
      })
- })
+ }, [])
+
+ function saveID(id){
+    localStorage.setItem('ID', id);
+ }
+
+
+
+ //Ver como coloca as informações no formulário e como enviar paramentros na rota
 
  //Ver a questão do erro no console no key
 
@@ -35,8 +46,8 @@ export default function List(){
                 <Container>
                 <ul>
                 <Row>
-                    {incidents.map(incident => (
-                        <Col md={6}>
+                {incidents.map(incident => (
+                    <Col md={6}>
                         <li key={incident.id}>
                             <strong>ID</strong>
                             <p>{incident.id}</p>
@@ -58,8 +69,12 @@ export default function List(){
 
                             <strong>Comentários</strong>
                             <p>{incident.comment}</p>
+
+                            <button type='button' onClick={()=>saveID(incident.id)}>
+                                <Link to={'/examUpdate/' + incident.id}><BsPencil size={18} color='#E020441'/></Link>
+                            </button>
                         </li>
-                        </Col>
+                    </Col>
                     ))}
                 </Row>
                 </ul>
