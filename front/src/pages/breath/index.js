@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import {Menu} from '../../Person/Person';
 
 import api from '../../sevices/api';
 
@@ -57,11 +57,7 @@ export default function Breath(){
 
     return(
         <div className='main-section'>
-            <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
-                <div className="container">
-                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Breath</Link>
-                </div>
-            </nav>
+            <Menu name='Breath'/>
             <div className="row justify-content-center">
                 <div className="col-sm-10" style={{marginTop:'1%'}}>
                     <div className="card">

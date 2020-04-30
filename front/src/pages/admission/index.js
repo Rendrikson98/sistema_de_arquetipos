@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import {Menu} from '../../Person/Person';
 
 import api from '../../sevices/api';
 
@@ -161,11 +161,7 @@ export default function Admission(){
   }
     return(
       <div className='main-section'>
-            <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
-                <div className="container">
-                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Admissão</Link>
-                </div>
-            </nav>
+        <Menu name='Admission'/>
         <div className="row justify-content-center">
             <div className="col-sm-10" style={{marginTop:'1%'}}>
               <div className="card">
@@ -176,6 +172,7 @@ export default function Admission(){
                         <div className="form-group col-md-4">
                             <label>classificação do Paciente</label>
                             <select id='1' className="form-control" value={classificationPatient} onChange={e=>setClassificationPatient(e.target.value)}>
+                              <option></option>
                               <option>Internação/ paciente com pernoite</option>
                               <option>Day hospital</option>
                               <option>Ambulatorial</option>
@@ -259,6 +256,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Tipo do ID Universal</label>
                             <select id='8' className="form-control" value={universalIdType} onChange={e=>setUniversalIdType(e.target.value)}>
+                              <option></option>
                               <option>DNS</option>
                               <option>GUID</option>
                               <option>HCD</option>
@@ -348,6 +346,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Tipo de Localização</label>
                             <select id='16' className="form-control" value={locationType} onChange={e=>setLocationType(e.target.value)}>
+                              <option></option>
                               <option>Clínica</option>
                               <option>Casa</option>
                               <option>Departamento</option>
@@ -358,6 +357,7 @@ export default function Admission(){
                       <div className="form-group col-md-6">
                         <label>Tipo de Admissão</label>
                             <select id='17' className="form-control" value={AdmissionType} onChange={e=>setAdmissionType(e.target.value)}>
+                              <option></option>
                               <option>Clínica</option>
                               <option>Acidente</option>
                               <option>Emergência</option>
@@ -411,6 +411,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>Tipo do ID Universal</label>
                           <select id='21' className="form-control" value={universalIdTypePatient} onChange={e=>setUniversalIdTypePatient(e.target.value)}>
+                            <option></option>
                             <option>DNS</option>
                             <option>GUID</option>
                             <option>HCD</option>
@@ -469,6 +470,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label>Tipo de Localização</label>
                           <select id='26' className="form-control" value={locationTypePatient} onChange={e=>setLocationTypePatient(e.target.value)}>
+                            <option></option>
                             <option>Clínica</option>
                             <option>Casa</option>
                             <option>Departamento</option>
@@ -479,6 +481,7 @@ export default function Admission(){
                     <div className="form-group col-md-6">
                       <label >Tipo de Admissão</label>
                           <select id='27' className="form-control" value={admissiontypePatient} onChange={e=>setAdmissiontypePatient(e.target.value)}>
+                            <option></option>
                             <option>Clínica</option>
                             <option>Acidente</option>
                             <option>Emergência</option>
@@ -660,6 +663,7 @@ export default function Admission(){
                         <div className="form-group col-md-6">
                           <label>Tipo de Financiamento</label>
                               <select id='43' className="form-control" value={financingtypeDoctorAdmission} onChange={e=>setFinancingtypeDoctorAdmission(e.target.value)}>
+                                <option></option>
                                 <option>*Australian Health Care Agreements(en)</option>
                                 <option>Seguros de saúde privados</option>
                                 <option>Auto financiado</option>

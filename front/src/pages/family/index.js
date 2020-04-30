@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom'
 import {Button} from 'react-bootstrap';
+import {Menu} from '../../Person/Person';
 
 import api from '../../sevices/api';
 
@@ -67,11 +67,7 @@ export default function Family(){
 
     return(
         <div className='main-section'>
-            <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
-                <div className="container">
-                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Histórico Familiar</Link>
-                </div>
-            </nav>
+            <Menu name='Family'/>
             <div className="row justify-content-center">
                 <div className="col-sm-10"  style={{marginTop:'1%'}}>
                     <div className="card">
@@ -107,6 +103,7 @@ export default function Family(){
                                 <div className="form-group col-md-6" id='second'>
                                     <label>Deceased(en)</label>
                                     <select id='3' className="form-control" name="deceased" value={deceased} onChange={e=>setDeceased(e.target.value)}> 
+                                        <option></option>
                                         <option>True</option>
                                         <option>false</option>
                                     </select>
