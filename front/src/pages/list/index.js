@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
-import {Row, Container} from 'react-bootstrap';
-import {ListExam} from '../../Person/Person';
+import {Row, Container, Col} from 'react-bootstrap';
+import { Posts, PaginationNumber} from '../../Person/Person';
 
 
 import api from '../../sevices/api';
@@ -12,11 +12,34 @@ export default function List(){
 
  const [incidents, setincidents] = useState([]);
 
- useEffect(()=>{
-     api.get('exam').then(response => {
-         setincidents(response.data);
-     })
+ const [posts, setPosts] = useState([]);
+ const [loading, setLoading] = useState(false);
+ const [currentPage, setCurrentPage] = useState(1);
+ const [postsPerPage] = useState(4);
+
+ useEffect(()=> {
+    const fetchPosts = async () => {
+        setLoading(false);
+        await api.get('exam').then(res => {
+            setPosts(res.data);
+            setincidents(res.data)
+        });
+    }
+
+     fetchPosts();
  }, [])
+
+
+//console.log(posts)
+
+//GET current posts
+const indexOfLastPost = currentPage * postsPerPage;
+const indexOfFirsPost = indexOfLastPost - postsPerPage;
+const currentPosts = posts.slice(indexOfFirsPost, indexOfLastPost);
+
+//Change page
+
+const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return(
         <>
@@ -34,22 +57,21 @@ export default function List(){
                 <h1>Casos Exame</h1>
                 <Container>
                 <ul>
-                <Row>
-                {incidents.map(incident => (
-                    <ListExam 
-                        id={incident.id}
-                        systeOrEstru = {incident.systeOrEstru}
-                        bodyLocation = {incident.bodyLocation}
-                        noAbnormality = {incident.noAbnormality}
-                        clinicalDescription = {incident.clinicalDescription}
-                        clinicalInterpretation = {incident.clinicalInterpretation}
-                        comment = {incident.comment}
-                    />
-                    ))}
-                </Row>
+                    <Row>
+                        <Posts posts={currentPosts} loading={loading}/>
+                    </Row>
                 </ul>
                 </Container>
             </div>
+            
+            <Container className='d-flex justify-content-center'>
+                <Row>
+                    <Col md={12}>
+                        <PaginationNumber postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
+                    </Col>
+                </Row>
+            </Container>
+            
         </>
     );
 }

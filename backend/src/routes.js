@@ -26,7 +26,6 @@ routes.post('/bloodPressure', BloodPressure.create);
 routes.get('/admission', AdmissionController.index);
 routes.post('/admission', AdmissionController.create);
 
-routes.get('/list', Listcontroller.index);
 
 routes.get('/examUpdate/:id', ExamUpdateController.index);
 routes.put('/examUpdate/:id', ExamUpdateController.update);

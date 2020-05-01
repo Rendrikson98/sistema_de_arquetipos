@@ -15,11 +15,10 @@ export default function Exam(){
    const [comment, setComment] = useState('');
 
     const history = useHistory();
-
-   const ID = localStorage.getItem('ID')
-
-   useEffect(()=>{
-        api.get('list').then(response => {
+    const ID = localStorage.getItem('ID')
+    
+    useEffect(()=>{
+        api.get('exam').then(response => {
             setSysteOrEstru(response.data[ID-1].systeOrEstru);
             setBodyLocation(response.data[ID-1].bodyLocation);
             setNoAbnormality(response.data[ID-1].noAbnormality);

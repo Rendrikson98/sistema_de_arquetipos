@@ -301,7 +301,7 @@ export default function BloodPressure(){
                     </select>
                 </div>
                 <div className="form-group col-md-12"></div>
-                <Button type="submit" className="btn btn-success">Confirmar</Button>
+                <Button type="submit" className="btn btn-primary">Confirmar</Button>
                 </div>
               </form> 
             </div>
