@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import {Button} from 'react-bootstrap';
+import {Button, Container, Row, Col} from 'react-bootstrap';
 
 import api from '../../sevices/api';
 
@@ -139,7 +139,21 @@ export default function Exam(){
                                         />
                                     </div>
                                     <div className="form-group col-md-12"></div>
-                                    <Button className='primary' type='submit'>Enviar</Button>
+                                    <Container>
+                                        <Row>
+                                            <Col md={0.5}>
+                                                <Button className='primary' type='submit'>Enviar</Button>
+                                            </Col>
+                                            <Col md={1}>
+                                            <Button className='d-flex justify-content-right'>
+                                                <Link to='/list' style={{color: 'white', fontStyle: 'none'}}>
+                                                    Cancelar
+                                                </Link>
+                                            </Button>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                    
                                 </div>
                             </form>
                         </div>

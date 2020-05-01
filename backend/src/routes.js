@@ -5,7 +5,6 @@ const BreathController = require("./controllers/BreathController");
 const FamilyController = require('./controllers/FamilyController');
 const BloodPressure = require('./controllers/BloodPressure');
 const AdmissionController = require('./controllers/AdmissionController');
-const Listcontroller = require('./controllers/ListController');
 const ExamUpdateController = require('./controllers/examUpdateController');
 
 

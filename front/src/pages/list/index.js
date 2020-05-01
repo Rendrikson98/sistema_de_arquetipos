@@ -8,9 +8,6 @@ import api from '../../sevices/api';
 import './styles.css';
 
 export default function List(){
-    
-
- const [incidents, setincidents] = useState([]);
 
  const [posts, setPosts] = useState([]);
  const [loading, setLoading] = useState(false);
@@ -19,10 +16,11 @@ export default function List(){
 
  useEffect(()=> {
     const fetchPosts = async () => {
-        setLoading(false);
+        setLoading(true);
         await api.get('exam').then(res => {
             setPosts(res.data);
-            setincidents(res.data)
+            setLoading(false);
+            
         });
     }
 
