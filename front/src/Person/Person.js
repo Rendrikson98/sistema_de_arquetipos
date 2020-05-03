@@ -76,7 +76,6 @@ const PostBreath = ({posts, loading}) =>{
     }
 
     return(
-        <>
         <Container>
             <ul>
                 <Row>
@@ -125,7 +124,67 @@ const PostBreath = ({posts, loading}) =>{
                 </Row>
             </ul>
         </Container>
-        </>
+      
+    )
+}
+
+const PostFamily = ({posts, loading})=>{
+    if(loading){
+        return <h2>loading</h2>
+    }
+
+    return(
+        <Container>
+            <ul>
+                <Row>
+                    {posts.map(post => (
+                        <Col md={6}>
+                        <li key={post.id}>
+                            <strong>ID</strong>
+                            <p>{post.id}</p>
+
+                            <strong>Relação</strong>
+                            <p>{post.relationship}</p>
+
+                            <strong>Data de Nascimento</strong>
+                            <p>{post.dateOfBirth}</p>
+
+                            <strong>Falecido</strong>
+                            <p>{post.deceased}</p>
+
+                            <strong>Idade de falecimento</strong>
+                            <p>{post.ageAtDeath} {post.ageMeasureDeath}</p>
+
+                            <strong>Data de óbito</strong>
+                            <p>{post.deathDate}</p>
+
+                            <strong>Diagnótico do problema</strong>
+                            <p>{post.ProblemDiagno}</p>
+
+                            <strong>Descrição clínica</strong>
+                            <p>{post.clinicalDescription}</p>
+
+                            <strong>Idade da detecção do problema</strong>
+                            <p>{post.problemDetectionAge} {post.ageMeasurement}</p>
+
+                            <strong>Causa da morte</strong>
+                            <p>{post.causeOfDeath}</p>
+
+                            <strong>Descrição da causa da morte</strong>
+                            <p>{post.causeOfDeathDescription}</p>
+
+                            <strong>Comentário</strong>
+                            <p id='last'>{post.comment}</p>
+
+                            <button type='button' onClick={()=> saveID(post.id)}> 
+                                <Link to={'/familyUpdate/' + post.id}><BsPencil size={18} color='#E020441'/></Link>
+                            </button>
+                        </li>
+                        </Col>
+                    ))}
+                </Row>
+            </ul>
+        </Container>
     )
 }
 
@@ -156,5 +215,5 @@ const PaginationNumber = ({postsPerPage, totalPosts, paginate})=>{
     )
 }
 
-export {Menu, MenuList, Posts, PaginationNumber, PostBreath};
+export {Menu, MenuList, Posts, PaginationNumber, PostBreath, PostFamily};
 

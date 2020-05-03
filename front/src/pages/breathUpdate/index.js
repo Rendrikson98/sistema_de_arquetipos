@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {Button, Container, Row, Col} from 'react-bootstrap';
-import {Menu} from '../../Person/Person';
+
 
 
 import api from '../../sevices/api';

@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 import {Menu} from '../../Person/Person';
 
@@ -21,6 +22,27 @@ export default function Family(){
     const [causeOfDeathDescription, setCauseOfDeathDescription] = useState('');
     const [comment, setComment] = useState('');
 
+    const redirect = useHistory();
+    const ID = localStorage.getItem('ID');
+
+    useEffect(()=>{
+        api.get(`familyUpdate/${ID}`).then(res =>{
+            setRelationship(res.data.relationship);
+            setDateOFBirth(res.data.dateOFBirth);
+            setDeceased(res.data.deceased);
+            setAgeAtDeath(res.data.ageAtDeath);
+            setAgeMeasureDeath(res.data.ageMeasureDeath);
+            setDeathDate(res.data.deathDate);
+            setProblemDiagno(res.data.ProblemDiagno);
+            setClinicalDescription(res.data.clinicalDescription);
+            setProblemDetectionAge(res.data.problemDetectionAge);
+            setAgeMeasurement(res.data.ageMeasurement);
+            setCauseOfDeath(res.data.causeOfDeath);
+            setCauseOfDeathDescription(res.data.causeOfDeathDescription);
+            setComment(res.data.comment);
+        })
+    }, [])
+
     async function handleFamily(e){
         e.preventDefault();
 
@@ -41,23 +63,27 @@ export default function Family(){
         };
 
         try{
-            const response = await api.post('family', data);
+            await api.put(`/familyUpdate/${ID}`, {
+                "relationship": data.relationship,
+                "dateOFBirth": data.dateOFBirth,
+                "deceased": data.deceased,
+                "ageAtDeath": data.ageAtDeath,
+                "ageMeasureDeath": data.ageMeasureDeath,
+                "deathDate": data.deathDate,
+                "ProblemDiagno": data.ProblemDiagno,
+                "clinicalDescription": data.clinicalDescription,
+                "problemDetectionAge": data.problemDetectionAge,
+                "ageMeasurement": data.ageMeasurement,
+                "causeOfDeath": data.causeOfDeath,
+                "causeOfDeathDescription": data.causeOfDeathDescription,
+                "comment": data.comment,
+            })
 
-            alert(`Dados enviados com sucesso a Id desse formulário é:${response.data.id}`);
+            alert('Dados atualizados com sucesso')
 
-            document.getElementById('1').value='';
-            document.getElementById('2').value='';
-            document.getElementById('3').value='';
-            document.getElementById('4').value='';
-            document.getElementById('5').value='';
-            document.getElementById('6').value='';
-            document.getElementById('7').value='';
-            document.getElementById('8').value='';
-            document.getElementById('9').value='';
-            document.getElementById('10').value='';
-            document.getElementById('11').value='';
-            document.getElementById('12').value='';
-            document.getElementById('13').value='';
+            localStorage.clear();
+
+            redirect.push('/listFamily');
 
         }catch(err){
             alert('Erro ao enviar os dados, tente novamente');

@@ -11,6 +11,8 @@ import List from './pages/list/index';
 import Update  from './pages/examUpdate';
 import ListBreath from './pages/listBreath';
 import BreathUpdate from './pages/breathUpdate';
+import ListFamily from './pages/listFamily';
+import FamilyUpdate from './pages/familyUpdate';
 
 
 
@@ -28,6 +30,8 @@ export default function Routes(){
                 <Route path='/examUpdate/:id' component={Update}/>
                 <Route path='/listBreath' component={ListBreath}/>
                 <Route path='/breathUpdate/:id' component={BreathUpdate} />
+                <Route path='/listFamily' component={ListFamily}/>
+                <Route path='/familyUpdate/:id' component={FamilyUpdate}/>
             </Switch>
         </BrowserRouter>
     )
