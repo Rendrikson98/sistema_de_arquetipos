@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Col} from 'react-bootstrap';
+import {Col, Row, Container} from 'react-bootstrap';
 import {BsPencil} from 'react-icons/bs'
 
 
@@ -10,10 +10,23 @@ const Menu = (props) =>
         <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - {props.name}</Link>
     </div>
     <div style={{marginRight:'20px'}}>
-        <Link to='/list'>Listar</Link>
+        <Link to={props.link}>Listar</Link>
     </div>
     </nav>
 
+const MenuList = (props) =>
+    <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
+    <div className="container">
+        <Link className="navbar-brand" to="/" id='titulo' style={{marginLeft:'20px'}}>Lista - {props.name}</Link>
+    </div>
+    <div style={{marginRight:'20px', fontStyle: '#F0F0F0'}}>
+    <Link to={props.link}>voltar</Link>
+    </div>
+</nav>
+
+function saveID(id){
+    localStorage.setItem('ID', id);
+ }
 
 const Posts = ({ posts, loading}) => {
    if(loading){
@@ -57,6 +70,65 @@ const Posts = ({ posts, loading}) => {
     )
 }
 
+const PostBreath = ({posts, loading}) =>{
+    if(loading){
+        return <h2>Loading...</h2>
+    }
+
+    return(
+        <>
+        <Container>
+            <ul>
+                <Row>
+                    {posts.map(post=>(
+                        <Col md={6}>
+                            <li key={post.id}>
+                                <strong>ID</strong>
+                                <p>{post.id}</p>
+
+                                <strong>Histórico</strong>
+                                <p>{post.history}</p>
+
+                                <strong>Presença</strong>
+                                <p>{post.presence}</p>
+
+                                <strong>Frequência</strong>
+                                <p>{post.frequency}</p>
+
+                                <strong>Regularidade</strong>
+                                <p>{post.regularity}</p>
+
+                                <strong>Profundidade</strong>
+                                <p>{post.depth}</p>
+
+                                <strong>Descrição Clínica</strong>
+                                <p>{post.clinicalDescription}</p>
+
+                                <strong>Interpretação clínca</strong>
+                                <p>{post.clinicalInterpretation}</p>
+
+                                <strong>Comentário</strong>
+                                <p>{post.comment}</p>
+
+                                <strong>Posição do corpo</strong>
+                                <p>{post.bodyPosition}</p>
+
+                                <strong>Fatores de confusão</strong>
+                                <p id='ultimo'>{post.confoundingFactors}</p>
+
+                                <button type='button' onClick={()=>saveID(post.id)}>
+                                    <Link to={'/breathUpdate/' + post.id}><BsPencil size={18} color='#E020441'/></Link>
+                                </button>
+                            </li>
+                        </Col>
+                    ))}
+                </Row>
+            </ul>
+        </Container>
+        </>
+    )
+}
+
 const PaginationNumber = ({postsPerPage, totalPosts, paginate})=>{
     const pageNumbers = [];
 
@@ -64,23 +136,25 @@ const PaginationNumber = ({postsPerPage, totalPosts, paginate})=>{
         pageNumbers.push(i);
     }
     return(
-        <nav>
-            <ul className='pagination'>
-                {pageNumbers.map(number => (
-                    <li key={number} className='page-item'>
-                        <Link onClick={() => paginate(number)} to={'#'} className='page-link'>
-                            {number}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+    <Container className='d-flex justify-content-center'>
+            <Row>
+                <Col md={12}>
+                    <nav>
+                        <ul className='pagination'>
+                            {pageNumbers.map(number => (
+                                <li key={number} className='page-item'>
+                                    <Link onClick={() => paginate(number)} to={'#'} className='page-link'>
+                                        {number}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </Col>
+            </Row>
+    </Container>
     )
 }
 
-export {Menu, Posts, PaginationNumber};
+export {Menu, MenuList, Posts, PaginationNumber, PostBreath};
 
-
-function saveID(id){
-    localStorage.setItem('ID', id);
- }

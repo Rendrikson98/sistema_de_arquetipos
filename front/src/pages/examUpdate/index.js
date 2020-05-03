@@ -6,7 +6,7 @@ import api from '../../sevices/api';
 
 import './styles.css';
 
-export default function Exam(){
+export default function ExamUpdate(){
    const [systeOrEstru, setSysteOrEstru] = useState('');
    const [bodyLocation, setBodyLocation] = useState('');
    const [noAbnormality, setNoAbnormality] = useState('');
@@ -18,13 +18,13 @@ export default function Exam(){
     const ID = localStorage.getItem('ID')
     
     useEffect(()=>{
-        api.get('exam').then(response => {
-            setSysteOrEstru(response.data[ID-1].systeOrEstru);
-            setBodyLocation(response.data[ID-1].bodyLocation);
-            setNoAbnormality(response.data[ID-1].noAbnormality);
-            setClinicalDescription(response.data[ID-1].clinicalDescription);
-            setClinicalInterpretation(response.data[ID-1].clinicalInterpretation);
-            setComment(response.data[ID-1].comment);
+        api.get(`examUpdate/${ID}`).then(response => {
+            setSysteOrEstru(response.data.systeOrEstru);
+            setBodyLocation(response.data.bodyLocation);
+            setNoAbnormality(response.data.noAbnormality);
+            setClinicalDescription(response.data.clinicalDescription);
+            setClinicalInterpretation(response.data.clinicalInterpretation);
+            setComment(response.data.comment);
         })
    }, [])
 
@@ -67,7 +67,7 @@ export default function Exam(){
         <div className='main-section'>
             <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark" id="ftco-navbar">
                 <div className="container">
-                    <Link className="navbar-brand" to="/" id='titulo'>Arquétipos Editor - Exam</Link>
+                    <Link className="navbar-brand" to="/" id='titulo'>Atualização - Exam</Link>
                 </div>
             </nav>
             <div className="row justify-content-center">

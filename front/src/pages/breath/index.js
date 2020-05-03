@@ -57,7 +57,7 @@ export default function Breath(){
 
     return(
         <div className='main-section'>
-            <Menu name='Breath'/>
+            <Menu name='Breath' link='/listBreath'/>
             <div className="row justify-content-center">
                 <div className="col-sm-10" style={{marginTop:'1%'}}>
                     <div className="card">
@@ -73,7 +73,7 @@ export default function Breath(){
                                         </select>
                                     </div>
                                     <div className="form-group col-md-12"></div>
-                                    <div className="form-group col-md-6" id='first'>
+                                    <div className="form-group col-md-6" >
                                         <label>Presence(en)</label>
                                         <select id="2" className="form-control" value={presence} onChange={e=> setPresence(e.target.value)}>
                                             <option></option>
@@ -81,7 +81,7 @@ export default function Breath(){
                                             <option>*Not detected (en)</option>
                                         </select>
                                     </div>
-                                    <div className="form-group col-md-6" id='second'>
+                                    <div className="form-group col-md-6" >
                                         <label>Frequência</label>
                                         <input 
                                             id='3'

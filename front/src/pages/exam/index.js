@@ -46,7 +46,7 @@ export default function Exam(){
     
     return( 
         <div className='main-section'>
-            <Menu name='Exam'/>
+            <Menu name='Exam' link='/list'/>
             <div className="row justify-content-center">
                 <div className="col-sm-10"  style={{marginTop:'1%'}}>
                     <div className="card">
