@@ -201,57 +201,57 @@ const PostBloodPressure = ({posts, loading}) =>{
                     <Col md={6}>
                         <li key={post.id}>
                             <strong>ID</strong>
-                            <p>{post.id}</p>
+                            <p>{post.id} </p>
 
-                            <strong>systotic</strong>
-                            <p>{post.systotic}</p>
+                            <strong>Sistólica</strong>
+                            <p>{post.systotic + " mm[Hg]"}</p>
                             
-                            <strong>diastotic</strong>
-                            <p>{post.diastotic}</p>
+                            <strong>Diastólica</strong>
+                            <p>{post.diastotic + " mm[Hg]"}</p>
 
-                            <strong>bloodPressure</strong>
-                            <p>{post.bloodPressure}</p>
+                            <strong>Pressão arterial média</strong>
+                            <p>{post.bloodPressure + " mm[Hg]"}</p>
 
-                            <strong>pulsePressure</strong>
-                            <p>{post.pulsePressure}</p>
+                            <strong>Pressão de pulso</strong>
+                            <p>{post.pulsePressure + " mm[Hg]"}</p>
 
-                            <strong>clinicalInterpretation</strong>
+                            <strong>Interpretação clínica</strong>
                             <p>{post.clinicalInterpretation}</p>
 
-                            <strong>commentary</strong>
+                            <strong>Comentário</strong>
                             <p>{post.commentary}</p>
 
-                            <strong>position</strong>
+                            <strong>Posição</strong>
                             <p>{post.position}</p>
 
-                            <strong>sleepStatus</strong>
+                            <strong>Status de sono</strong>
                             <p>{post.sleepStatus}</p>
 
-                            <strong>factors</strong>
+                            <strong>Fatores</strong>
                             <p>{post.factors}</p>
 
-                            <strong>tilted</strong>
-                            <p>{post.tilted}</p>
+                            <strong>inclinação</strong>
+                            <p>{post.tilted + " deg"}</p>
 
-                            <strong>clamp</strong>
+                            <strong>Tamanho da braçadeira</strong>
                             <p>{post.clamp}</p>
 
-                            <strong>measurementLocation</strong>
+                            <strong>Localização da medição</strong>
                             <p>{post.measurementLocation}</p>
 
-                            <strong>method</strong>
+                            <strong>Método</strong>
                             <p>{post.method}</p>
 
-                            <strong>systoticForm</strong>
+                            <strong>Fomulário de Pressão Sistólica</strong>
                             <p>{post.systoticForm}</p>
 
-                            <strong>finalDiastole</strong>
+                            <strong>Fomulário de Pressão Diastólica</strong>
                             <p>{post.finalDiastole}</p>
 
-                            <strong>bloodPressuerForm</strong>
+                            <strong>Fomulário de Pressão Arterial</strong>
                             <p>{post.bloodPressuerForm}</p>
 
-                            <strong>diastoliPressure</strong>
+                            <strong>Final da Diástole</strong>
                             <p id='lastB'>{post.diastoliPressure}</p>
 
                             <button type='button' onClick={()=>saveID(post.id)}>

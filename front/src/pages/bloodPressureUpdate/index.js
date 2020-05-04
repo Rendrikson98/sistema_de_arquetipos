@@ -79,8 +79,33 @@ export default function BloodPressure(){
     };
 
     try{
-      
-     
+
+      await api.put(`/bloodPressureUpdate/${ID}`, {
+        "historic": data.historic,
+        "systotic": data.systotic,
+        "diastotic": data.diastotic,
+        "bloodPressure": data.bloodPressure,
+        "pulsePressure": data.pulsePressure,
+        "clinicalInterpretation": data.clinicalInterpretation,
+        "commentary": data.commentary,
+        "position": data.position,
+        "sleepStatus": data.sleepStatus,
+        "factors": data.factors,
+        "tilted": data.tilted,
+        "clamp": data.clamp,
+        "measurementLocation": data.measurementLocation,
+        "method": data.method,
+        "systoticForm": data.systoticForm,
+        "finalDiastole": data.finalDiastole,
+        "bloodPressuerForm": data.bloodPressuerForm,
+        "diastoliPressure": data.diastoliPressure,
+      });
+
+      alert('Dados atualizados com sucesso');
+
+      localStorage.clear()
+
+      redirect.push('/listBloodPressure');
     }catch(error){
       alert("Erro ao enviar os dados, tente novamente");
     }
