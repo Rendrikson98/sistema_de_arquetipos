@@ -61,7 +61,7 @@ const Posts = ({ posts, loading}) => {
             <p>{post.comment}</p>
 
             <button type='button' onClick={()=>saveID(post.id)}>
-                <Link to={'/examUpdate/' + post.id}><BsPencil size={18} color='#E020441'/></Link>
+                <Link to={'/examUpdate/' + post.id}><BsPencil size={18}/></Link>
             </button>
             </li>
             </Col>
@@ -116,7 +116,7 @@ const PostBreath = ({posts, loading}) =>{
                                 <p id='ultimo'>{post.confoundingFactors}</p>
 
                                 <button type='button' onClick={()=>saveID(post.id)}>
-                                    <Link to={'/breathUpdate/' + post.id}><BsPencil size={18} color='#E020441'/></Link>
+                                    <Link to={'/breathUpdate/' + post.id}><BsPencil size={18}/></Link>
                                 </button>
                             </li>
                         </Col>
@@ -177,11 +177,89 @@ const PostFamily = ({posts, loading})=>{
                             <p id='last'>{post.comment}</p>
 
                             <button type='button' onClick={()=> saveID(post.id)}> 
-                                <Link to={'/familyUpdate/' + post.id}><BsPencil size={18} color='#E020441'/></Link>
+                                <Link to={'/familyUpdate/' + post.id}><BsPencil size={18} /></Link>
                             </button>
                         </li>
                         </Col>
                     ))}
+                </Row>
+            </ul>
+        </Container>
+    )
+}
+
+const PostBloodPressure = ({posts, loading}) =>{
+    if(loading){
+        return <h2>Loading...</h2>
+    }
+
+    return(
+        <Container>
+            <ul>
+                <Row id='row'>
+                {posts.map(post =>(
+                    <Col md={6}>
+                        <li key={post.id}>
+                            <strong>ID</strong>
+                            <p>{post.id}</p>
+
+                            <strong>systotic</strong>
+                            <p>{post.systotic}</p>
+                            
+                            <strong>diastotic</strong>
+                            <p>{post.diastotic}</p>
+
+                            <strong>bloodPressure</strong>
+                            <p>{post.bloodPressure}</p>
+
+                            <strong>pulsePressure</strong>
+                            <p>{post.pulsePressure}</p>
+
+                            <strong>clinicalInterpretation</strong>
+                            <p>{post.clinicalInterpretation}</p>
+
+                            <strong>commentary</strong>
+                            <p>{post.commentary}</p>
+
+                            <strong>position</strong>
+                            <p>{post.position}</p>
+
+                            <strong>sleepStatus</strong>
+                            <p>{post.sleepStatus}</p>
+
+                            <strong>factors</strong>
+                            <p>{post.factors}</p>
+
+                            <strong>tilted</strong>
+                            <p>{post.tilted}</p>
+
+                            <strong>clamp</strong>
+                            <p>{post.clamp}</p>
+
+                            <strong>measurementLocation</strong>
+                            <p>{post.measurementLocation}</p>
+
+                            <strong>method</strong>
+                            <p>{post.method}</p>
+
+                            <strong>systoticForm</strong>
+                            <p>{post.systoticForm}</p>
+
+                            <strong>finalDiastole</strong>
+                            <p>{post.finalDiastole}</p>
+
+                            <strong>bloodPressuerForm</strong>
+                            <p>{post.bloodPressuerForm}</p>
+
+                            <strong>diastoliPressure</strong>
+                            <p id='lastB'>{post.diastoliPressure}</p>
+
+                            <button type='button' onClick={()=>saveID(post.id)}>
+                                <Link to={'/bloodPressureUpdate/' + post.id}><BsPencil size={18}/></Link>
+                                </button>
+                        </li>
+                    </Col>
+                ))}
                 </Row>
             </ul>
         </Container>
@@ -215,5 +293,5 @@ const PaginationNumber = ({postsPerPage, totalPosts, paginate})=>{
     )
 }
 
-export {Menu, MenuList, Posts, PaginationNumber, PostBreath, PostFamily};
+export {Menu, MenuList, Posts, PaginationNumber, PostBreath, PostFamily, PostBloodPressure};
 

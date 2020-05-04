@@ -13,6 +13,8 @@ import ListBreath from './pages/listBreath';
 import BreathUpdate from './pages/breathUpdate';
 import ListFamily from './pages/listFamily';
 import FamilyUpdate from './pages/familyUpdate';
+import ListBloodPressure from './pages/listBloodPressure';
+import BloodPressureUpdate from './pages/bloodPressureUpdate';
 
 
 
@@ -32,6 +34,8 @@ export default function Routes(){
                 <Route path='/breathUpdate/:id' component={BreathUpdate} />
                 <Route path='/listFamily' component={ListFamily}/>
                 <Route path='/familyUpdate/:id' component={FamilyUpdate}/>
+                <Route path='/listBloodPressure' component={ListBloodPressure}/>
+                <Route path='/bloodPressureUpdate/:id' component={BloodPressureUpdate}/>
             </Switch>
         </BrowserRouter>
     )

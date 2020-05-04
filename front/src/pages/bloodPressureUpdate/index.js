@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button} from 'react-bootstrap';
 import {Menu} from '../../Person/Person';
+import {useHistory} from 'react-router-dom';
 
 import api from '../../sevices/api';
 
@@ -25,6 +26,32 @@ export default function BloodPressure(){
   const [finalDiastole, setfinalDiastole] = useState('');
   const [bloodPressuerForm, setbloodPressuerForm] = useState('');
   const [diastoliPressure, setdiastoliPressure] = useState('');
+
+  const redirect = useHistory();
+  const ID = localStorage.getItem('ID');
+
+  useEffect(()=>{
+    api.get(`bloodPressureUpdate/${ID}`).then(res => {
+      sethistoric(res.data.historic);
+      setsystotic(res.data.systotic);
+      setdiastotic(res.data.diastotic);
+      setbloodPressure(res.data.bloodPressure);
+      setpulsePressure(res.data.pulsePressure);
+      setclinicalInterpretation(res.data.clinicalInterpretation);
+      setcommentary(res.data.commentary);
+      setposition(res.data.position);
+      setsleepStatus(res.data.sleepStatus);
+      setfactors(res.data.factors);
+      settilted(res.data.tilted);
+      setclamp(res.data.clamp);
+      setmeasurementLocation(res.data.measurementLocation);
+      setmethod(res.data.method);
+      setsystoticForm(res.data.systoticForm);
+      setfinalDiastole(res.data.finalDiastole);
+      setbloodPressuerForm(res.data.bloodPressuerForm);
+      setdiastoliPressure(res.data.diastoliPressure);
+    })
+  },[]);
 
   async function handleBloodPressure(e){
     
@@ -52,29 +79,8 @@ export default function BloodPressure(){
     };
 
     try{
-      const response = await api.post('bloodPressure', data);
-
-      alert(`Dados enviados com sucesso a Id desse formulário é:${response.data.id}`)
-
-      document.getElementById('1').value='';
-      document.getElementById('2').value='';
-      document.getElementById('3').value='';
-      document.getElementById('4').value='';
-      document.getElementById('5').value='';
-      document.getElementById('6').value='';
-      document.getElementById('7').value='';
-      document.getElementById('8').value='';
-      document.getElementById('9').value='';
-      document.getElementById('10').value='';
-      document.getElementById('11').value='';
-      document.getElementById('12').value='';
-      document.getElementById('13').value='';
-      document.getElementById('15').value='';
-      document.getElementById('16').value='';
-      document.getElementById('17').value='';
-      document.getElementById('18').value='';
-      document.getElementById('19').value='';
-
+      
+     
     }catch(error){
       alert("Erro ao enviar os dados, tente novamente");
     }
