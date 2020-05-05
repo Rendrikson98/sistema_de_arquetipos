@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {Button} from 'react-bootstrap';
+import {Button, Container, Col, Row} from 'react-bootstrap';
 import {Menu} from '../../Person/Person';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 
 import api from '../../sevices/api';
 
@@ -332,7 +332,16 @@ export default function BloodPressure(){
                     </select>
                 </div>
                 <div className="form-group col-md-12"></div>
-                <Button type="submit" className="btn btn-primary">Confirmar</Button>
+                <div style={{marginLeft: '20px'}}>
+                    <Row>
+                      <Button type="submit" className="btn btn-primary" style={{marginRight: '10px'}}>Confirmar</Button>
+                      <Button className='d-flex justify-content-right'>
+                          <Link to='/listBloodPressure' style={{color: 'white', fontStyle: 'none'}}>
+                              Cancelar
+                          </Link>
+                      </Button>
+                    </Row>
+                </div>
                 </div>
               </form> 
             </div>

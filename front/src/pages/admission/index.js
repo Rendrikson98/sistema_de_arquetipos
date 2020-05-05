@@ -161,7 +161,7 @@ export default function Admission(){
   }
     return(
       <div className='main-section'>
-        <Menu name='Admission'/>
+        <Menu name='Admission' link={'/listAdmission'}/>
         <div className="row justify-content-center">
             <div className="col-sm-10" style={{marginTop:'1%'}}>
               <div className="card">

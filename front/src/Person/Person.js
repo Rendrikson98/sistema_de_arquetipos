@@ -196,7 +196,7 @@ const PostBloodPressure = ({posts, loading}) =>{
     return(
         <Container>
             <ul>
-                <Row id='row'>
+                <Row >
                 {posts.map(post =>(
                     <Col md={6}>
                         <li key={post.id}>
@@ -266,6 +266,185 @@ const PostBloodPressure = ({posts, loading}) =>{
     )
 }
 
+const PostsAdmission = ({posts, loading})=>{
+    if(loading){
+        return <h2>Loading...</h2>
+    }
+
+    return(
+        <Container>
+            <ul>
+                <Row>
+                    {posts.map((post)=>(
+                        <Col md={6}>
+                        <li key={post.id}>
+                            <strong>ID</strong>
+                            <p>{post.id}</p>
+
+                            <strong>classificação do Paciente</strong>
+                            <p>{post.classificationPatient}</p>
+
+                            <strong>Unidade de Cuidado</strong>
+                            <p>{post.careUnit}</p>
+
+                            <strong>Ala</strong>
+                            <p>{post.allah}</p>
+
+                            <strong>Quarto</strong>
+                            <p>{post.bedroom}</p>
+
+                            <strong>Leito</strong>
+                            <p>{post.bed}</p>
+
+                            <strong>ID do Local</strong>
+                            <p>{post.placeId}</p>
+
+                            <strong>ID Universal</strong>
+                            <p>{post.universalId}</p>
+
+                            <strong>Tipo de ID Universal</strong>
+                            <p>{post.universalIdType}</p>
+
+                            <strong>Prédio</strong>
+                            <p>{post.building}</p>
+
+                            <strong>Andar</strong>
+                            <p>{post.floor}</p>
+
+                            <strong>Descrição da Localização</strong>
+                            <p>{post.locationDescription}</p>
+
+                            <strong>Logradouro</strong>
+                            <p>{post.publicPlace}</p>
+
+                            <strong>Cidade</strong>
+                            <p>{post.city}</p>
+
+                            <strong>Estado</strong>
+                            <p>{post.state}</p>
+
+                            <strong>País</strong>
+                            <p>{post.country}</p>
+
+                            <strong>Tipo de Localização</strong>
+                            <p>{post.locationType}</p>
+
+                            <strong>Tipo de Admissão</strong>
+                            <p>{post.AdmissionType}</p>
+
+                            <strong>Número da Pré-admissão</strong>
+                            <p>{post.preAdmissionNumber}</p>
+
+                            <br/>
+                            <h5>Dados do Paciente</h5>
+                            <br/>
+
+                            <strong>ID do Local</strong>
+                            <p>{post.placeIdPatient}</p>
+
+                            <strong>ID Universal</strong>
+                            <p>{post.universalIdPatient}</p>
+
+                            <strong>Tipo do ID Universal</strong>
+                            <p>{post.universalIdTypePatient}</p>
+
+                            <strong>Logradouro</strong>
+                            <p>{post.publicPlacePatient}</p>
+
+                            <strong>Cidade</strong>
+                            <p>{post.cityPatient}</p>
+
+                            <strong>Estado</strong>
+                            <p>{post.statePatient}</p>
+
+                            <strong>País</strong>
+                            <p>{post.countryPatient}</p>
+
+                            <strong>Tipo de Localização</strong>
+                            <p>{post.locationTypePatient}</p>
+
+                            <strong>Tipo de Admissão</strong>
+                            <p>{post.admissiontypePatient}</p>
+
+                            <strong>Número da Pré-admissão</strong>
+                            <p>{post.preAdmissionNumberPatient}</p>
+
+                            <br/>
+                            <h5>Dados do Médico de Atendimento</h5>
+                            <br/>
+
+                            <strong>id do Médico</strong>
+                            <p>{post.idDoctor}</p>
+
+                            <strong>Nome do Médico</strong>
+                            <p>{post.nameDoctor}</p>
+
+                            <strong>Sobrenome do Médico</strong>
+                            <p>{post.surnameDoctor}</p>
+
+                            <br/>
+                            <h5>Dados do Médico Solicitante</h5>
+                            <br/>
+
+                            <strong>ID do Médico</strong>
+                            <p>{post.idRequestingDoctor}</p>
+
+                            <strong>Nome do Médico</strong>
+                            <p>{post.nameRequestingDoctor}</p>
+
+                            <strong>Sobrenome do Médico</strong>
+                            <p>{post.surnameRequestingDoctor}</p>
+
+                            <br/>
+                            <h5>Dados do Médico Especialista</h5>
+                            <br/>
+
+                            <strong>ID do Médico</strong>
+                            <p>{post.idDoctorEspecialist}</p>
+
+                            <strong>Nome do Médico</strong>
+                            <p>{post.nameDoctorEspecialist}</p>
+
+                            <strong>Sobrenome do Médico</strong>
+                            <p>{post.surnameDoctorEspecialist}</p>
+
+                            <strong>Unidade Hospitalar</strong>
+                            <p>{post.hospitalUnitDoctorEspecialist}</p>
+
+                            <strong>Fonte de Admissão</strong>
+                            <p>{post.admissionsourceDoctorEspecialist}</p>
+
+                            <br/>
+                            <h5>Dados do Médico de Admissão</h5>
+                            <br/>
+
+                            <strong>ID do Médico</strong>
+                            <p>{post.idDoctorAdmission}</p>
+
+                            <strong>Nome do Médico</strong>
+                            <p>{post.nameDoctorAdmission}</p>
+
+                            <strong>Sobrenome do Médico</strong>
+                            <p>{post.surnameDoctorAdmission}</p>
+
+                            <strong>Tipo de Financiamento</strong>
+                            <p>{post.financingtypeDoctorAdmission}</p>
+
+                            <strong>Data/hora de Admissão</strong>
+                            <p>{post.admissionDateTimedoctorAdmission}</p>
+
+                            <button type='button' onClick={()=>saveID(post.id)}>
+                                <Link to={'/AdmissionUpdate/' + post.id}><BsPencil size={18}/></Link>
+                            </button>
+                        </li>
+                        </Col>
+                    ))}
+                </Row>
+            </ul>
+        </Container>
+    )
+}
+
 const PaginationNumber = ({postsPerPage, totalPosts, paginate})=>{
     const pageNumbers = [];
 
@@ -293,5 +472,5 @@ const PaginationNumber = ({postsPerPage, totalPosts, paginate})=>{
     )
 }
 
-export {Menu, MenuList, Posts, PaginationNumber, PostBreath, PostFamily, PostBloodPressure};
+export {Menu, MenuList, Posts, PaginationNumber, PostBreath, PostFamily, PostBloodPressure, PostsAdmission};
 

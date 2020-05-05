@@ -9,6 +9,7 @@ const ExamUpdateController = require('./controllers/examUpdateController');
 const BreathUpdateController = require('./controllers/BreathUpdateController');
 const FamilyUpdateController = require('./controllers/FamilyUpdateController');
 const BloodPressureUpdateController = require('./controllers/BloodPressureUpdate');
+const AdmissionUpdateController = require('./controllers/AdmissionUpdateController');
 
 const routes = express.Router();
 
@@ -38,5 +39,8 @@ routes.put('/familyUpdate/:id', FamilyUpdateController.update);
 
 routes.get('/bloodPressureUpdate/:id', BloodPressureUpdateController.index);
 routes.put('/bloodPressureUpdate/:id', BloodPressureUpdateController.update);
+
+routes.get('/admissionUpdate/:id', AdmissionUpdateController.index);
+routes.put('/admissionUpdate/:id', AdmissionUpdateController.update);
 
 module.exports = routes;

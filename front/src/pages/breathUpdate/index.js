@@ -195,20 +195,16 @@ export default function BreathUpdate(){
                                     />
                                 </div>
                                 <div className="form-group col-md-12"></div>
-                                <Container>
-                                    <Row>
-                                        <Col md={0.5}>
-                                            <Button type="submit" className="btn btn-primary">Confirmar</Button>
-                                        </Col>
-                                        <Col md={1}>
-                                            <Button className='d-flex justify-content-right'>
-                                                <Link to='/list' style={{color: 'white', fontStyle: 'none'}}>
-                                                    Cancelar
-                                                </Link>
-                                            </Button>
-                                        </Col>
-                                    </Row>
-                                </Container>
+                                <div>
+                                <Row style={{marginLeft: '7px'}}> 
+                                    <Button type="submit" className="btn btn-primary" style={{marginRight: '10px'}}>Confirmar</Button>
+                                    <Button className='d-flex justify-content-right'>
+                                        <Link to='/listBreath' style={{color: 'white', fontStyle: 'none'}}>
+                                            Cancelar
+                                        </Link>
+                                    </Button>
+                                </Row>
+                                </div>
                             </div>
                         </form> 
                     </div>
