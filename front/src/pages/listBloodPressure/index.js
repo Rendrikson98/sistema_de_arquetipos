@@ -3,7 +3,6 @@ import { MenuList, PostBloodPressure, PaginationNumber} from '../../Person/Perso
 
 import api from '../../sevices/api';
 import '../../stylesGlobal.css';
-import './styles.css';
 
 
 export default function ListBloodPressure(){

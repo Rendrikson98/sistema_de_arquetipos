@@ -35,7 +35,6 @@ export default function ListAdmission(){
             <header>
                 <MenuList name={'Admission'} link={'/admission'}/>
             </header>
-            <h1>Falta fazer a página de atualização</h1>
             <div className='profile-container'>
                 <PostsAdmission posts={currentPosts} loading={loading}/>
             </div>

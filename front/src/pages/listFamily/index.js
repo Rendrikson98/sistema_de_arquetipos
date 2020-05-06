@@ -3,7 +3,7 @@ import {MenuList, PostFamily, PaginationNumber} from '../../Person/Person';
 
 import api from '../../sevices/api';
 import '../../stylesGlobal.css';
-import './styles.css';
+
 
 export default function ListFamily(){
 

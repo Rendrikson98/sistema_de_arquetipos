@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {PostBreath, PaginationNumber, MenuList} from '../../Person/Person';
 
 import api from '../../sevices/api';
-import './styles.css';
+import '../../stylesGlobal.css';
 
 
 export default function ListBreath(){

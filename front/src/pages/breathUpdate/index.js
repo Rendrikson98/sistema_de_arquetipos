@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useHistory} from 'react-router-dom';
-import {Button, Container, Row, Col} from 'react-bootstrap';
-
-
+import {Button, Row} from 'react-bootstrap';
 
 import api from '../../sevices/api';
-import './styles.css';
+
 
 
 export default function BreathUpdate(){
