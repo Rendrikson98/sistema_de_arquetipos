@@ -1,24 +1,28 @@
 const connection = require('../database/connection');
 
 module.exports ={
-    async index(request, response){
-        const id = request.params.id;
-        const incident = await connection('breath').where('id', id).select('*').first();
-        return response.json(incident);
+    async index(request, response, next){
+        try {        
+            const id = request.params.id;
+            const incident = await connection('breath').where({id}).select('*').first();
+            return response.json(incident);
+        } catch (error) {
+            next(error)
+        }
     },
 
-    async update(request, response){
+    async update(request, response, next){
         try{
             const {id} = request.params;
             const incident = await connection('breath')
-                .where('id', id)
+                .where({id})
                 .select('*')
                 .first();
             if(incident.id != id || incident.id === undefined){
-                return response.status(404).json({error: 'id no found'});
+                return response.status(error.status).json({error: 'id no found'});
             }
 
-            await connection('breath').where('id', id).update({
+            await connection('breath').where({id}).update({
                 history: request.body.history,
                 presence: request.body.presence,
                 frequency: request.body.frequency,
@@ -34,7 +38,7 @@ module.exports ={
             return response.status(200).json({mensager: 'Data updated successfully'});
         }catch(error){
             console.log(error);
-            return response.status(404).json({error: 'id not found'});
+            next(error);
         }
     }
 }

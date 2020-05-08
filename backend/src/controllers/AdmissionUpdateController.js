@@ -2,7 +2,7 @@ const connection = require('../database/connection');
 
 module.exports = {
 
-    async index(request, response){
+    async index(request, response, next){
         try{
             const id = request.params.id;
             const incidents = await connection('admission').where('id', id).select('*').first();
@@ -10,17 +10,17 @@ module.exports = {
             return response.json(incidents);
         }catch(error){
             console.log(error)
-            return response.status(404).json({error: `${error}`});  
+            next(error);
         }
     },
 
-    async update(request, response){
+    async update(request, response, next){
         try{
             const {id} = request.params;
             const incident = await connection('admission').where('id', id).select('*').first();
 
             if (incident.id != id || incident.id === undefined){
-                return response.status(404).json({error: 'id not found'});
+                return response.status(error.status).json({error: 'id not found'});
             }
 
             await connection('admission').where('id', id).update({
@@ -73,7 +73,7 @@ module.exports = {
             return response.status(200).json({mensager: 'Data updated successfully'});
         }catch(error){
             console.log(error);
-            return response.status(404).json({error: `id not found          ${error}`});
+            next(error);
         }
     }
 }

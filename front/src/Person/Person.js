@@ -203,6 +203,9 @@ const PostBloodPressure = ({posts, loading}) =>{
                             <strong>ID</strong>
                             <p>{post.id} </p>
 
+                            <strong>Histórico</strong>
+                            <p>{post.historic}</p>
+
                             <strong>Sistólica</strong>
                             <p>{post.systotic + " mm[Hg]"}</p>
                             

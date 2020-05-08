@@ -1,13 +1,18 @@
 const connection = require('../database/connection');
 
 module.exports = {
-    async index(request, response){
-        const id = request.params.id;
-        const blood = await connection('bloodPressure').where('id', id).select('*').first();
-        return response.json(blood);
+    async index(request, response, next){
+        try {
+            const id = request.params.id;
+            const blood = await connection('bloodPressure').where('id', id).select('*').first();
+            return response.json(blood);
+        } catch (error) {
+            next(error);
+        }
+        
     },
 
-    async update(request, response){
+    async update(request, response, next){
         try{
             const {id} = request.params;
             const blood = await connection('bloodPressure')
@@ -17,7 +22,7 @@ module.exports = {
     
             if(blood.id != id || blood.id === undefined){
                 console.log(blood.id, id)
-                return response.status(404).json({error: 'id not found'});
+                return response.status(error.status).json({error: 'id not found'});
             }
     
             await connection('bloodPressure').where('id', id).update({
@@ -44,7 +49,7 @@ module.exports = {
             return response.status(200).json({mensager: 'Data updated successfully'});
         }catch(error){
             console.log(error)
-            return response.status(404).json({error:'id not found'});
+            next(error);
 
         }
 
