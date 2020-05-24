@@ -6,6 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import {BsPeople} from 'react-icons/bs';
 import {AiOutlineFileDone, AiOutlineContainer} from 'react-icons/ai';
+import {IoMdPulse} from 'react-icons/io';
+import {GrGroup} from 'react-icons/gr';
+import {GiLungs} from 'react-icons/gi';
 
 
 import '../../css/components.css';
@@ -103,7 +106,7 @@ export default function initial(){
                     </div>
                     <div class="s-12 m-12 l-4 margin-m-bottom">
                     <div class="padding-2x block-bordered">
-                        <i class="icon-sli-home icon3x text-dark center margin-bottom-30"></i>
+                        <GrGroup size={40} color={'#1C1C1C'}/>
                         <h2 class="text-thin">Histórico familiar</h2>
                         <p class="margin-bottom-30">Para registrar informações sobre a ocorrência de problemas significativos relacionados com a saúde de membros da família.</p>
                         <Link class="button button-dark-stroke text-size-12" to="/family">Selecionar</Link>
@@ -115,7 +118,7 @@ export default function initial(){
                 <div class="margin" style={{display:'flex', justifyContent:'center', marginTop:'20px'}}>
                     <div class="s-12 m-12 l-4 margin-m-bottom">
                     <div class="padding-2x block-bordered">
-                        <i class="icon-sli-shield icon3x text-dark center margin-bottom-30"></i>
+                        <IoMdPulse size={40} color={'#1C1C1C'} />
                         <h2 class="text-thin">Pressão Arterial</h2>
                         <p class="margin-bottom-30">Para registrar a pressão arterial sistêmica de um indivíduo.</p>
                         <Link class="button button-dark-stroke text-size-12" to="/bloodPressure">Selecionar</Link>
@@ -123,7 +126,7 @@ export default function initial(){
                     </div>
                     <div class="s-12 m-12 l-4 margin-m-bottom">
                     <div class="padding-2x block-bordered">
-                        <i class="icon-sli-umbrella icon3x text-dark center margin-bottom-30"></i>
+                        <GiLungs size={40} color={'#000'} />
                         <h2 class="text-thin">Respirações</h2>
                         <p class="margin-bottom-30">Registrar as características observadas da respiração.</p>
                         <Link class="button button-dark-stroke text-size-12" to="/breath">Selecionar</Link>
