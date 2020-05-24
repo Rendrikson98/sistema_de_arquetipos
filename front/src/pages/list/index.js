@@ -65,8 +65,8 @@ const paginate = (pageNumber) => setCurrentPage(pageNumber);
             
             <Container className='d-flex justify-content-center'>
                 <Row>
-                    <Col md={12}>
-                        <PaginationNumber postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
+                    <Col md={12} style={{backgroundColor:'white'}}>
+                        <PaginationNumber postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/>
                     </Col>
                 </Row>
             </Container>
